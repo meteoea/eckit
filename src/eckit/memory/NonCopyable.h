@@ -11,6 +11,9 @@
 #ifndef eckit_NonCopyable_h
 #define eckit_NonCopyable_h
 
+#include <iostream>
+extern std::basic_ostream<char, std::char_traits<char>> & operator<<(std::basic_ostream<char, std::char_traits<char>>& out, const std::string & s);
+extern std::ostream & operator<<(std::ostream& out, std::string & s);
 
 namespace eckit {
 

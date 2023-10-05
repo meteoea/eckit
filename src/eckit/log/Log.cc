@@ -364,7 +364,7 @@ void Log::print(std::ostream& os) {
 std::ostream& Log::syserr(std::ostream& s) {
     int e = errno;
     char estr[256];
-    handle_strerror_r(s, e, estr, strerror_r(e, estr, sizeof(estr)));
+    handle_strerror_r(s, e, estr, 0);
     return s;
 }
 

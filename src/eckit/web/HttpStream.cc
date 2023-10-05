@@ -111,13 +111,14 @@ void HttpBuf::reset() {
 }
 
 int HttpBuf::sync() {
-
+/*
     if (owner_.iword(xindex))
         std::copy(pbase(), pptr(), back_encoder(buffer_));
     else
         std::copy(pbase(), pptr(), std::back_inserter(buffer_));
 
     setp(pbase(), epptr());
+*/
     return 0;
 }
 

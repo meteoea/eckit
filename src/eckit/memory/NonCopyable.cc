@@ -9,8 +9,18 @@
  */
 
 #include "eckit/memory/NonCopyable.h"
+#include <cstring>
 
 //----------------------------------------------------------------------------------------------------------------------
+
+std::basic_ostream<char, std::char_traits<char>> & operator<<(std::basic_ostream<char, std::char_traits<char>>& out, const std::string & s) {
+   out << s.c_str();
+   return out;
+}
+std::ostream & operator<<(std::ostream& out, std::string & s) {
+    out << s.c_str();
+    return out;
+}
 
 namespace eckit {
 

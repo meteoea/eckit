@@ -38,11 +38,11 @@ std::ostream& operator<<(std::ostream& s, const ETA& sec) {
     return s;
 }
 
-ETA::operator std::string() const {
+/*ETA::operator std::string() const {
     std::ostringstream s;
     s << *this;
     return s.str();
-}
+}*/
 
 //----------------------------------------------------------------------------------------------------------------------
 

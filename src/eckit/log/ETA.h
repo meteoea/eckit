@@ -31,7 +31,7 @@ public:
 
     // -- Operators
 
-    operator std::string() const;
+    //operator std::string() const;
 
     friend std::ostream& operator<<(std::ostream&, const ETA&);
 
