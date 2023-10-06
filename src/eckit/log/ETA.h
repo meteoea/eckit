@@ -31,7 +31,9 @@ public:
 
     // -- Operators
 
-    //operator std::string() const;
+#ifndef __NEC__
+    operator std::string() const;
+#endif
 
     friend std::ostream& operator<<(std::ostream&, const ETA&);
 

@@ -28,6 +28,9 @@
 #include "eckit/thread/ThreadSingleton.h"
 #include "eckit/utils/Translator.h"
 
+#ifdef __NEC__
+  #define strerror_r(a, b, c) 0
+#endif
 
 namespace eckit {
 
@@ -364,7 +367,7 @@ void Log::print(std::ostream& os) {
 std::ostream& Log::syserr(std::ostream& s) {
     int e = errno;
     char estr[256];
-    handle_strerror_r(s, e, estr, 0);
+    handle_strerror_r(s, e, estr, strerror_r(e, estr, sizeof(estr)));
     return s;
 }
 
