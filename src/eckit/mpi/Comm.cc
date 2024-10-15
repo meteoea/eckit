@@ -99,6 +99,8 @@ public:
     }
 
     void finaliseAllComms() {
+        AutoLock<Mutex> lock(mutex_);
+
         std::map<std::string, Comm*>::iterator itr = communicators.begin();
         for (; itr != communicators.end(); ++itr) {
             delete itr->second;
